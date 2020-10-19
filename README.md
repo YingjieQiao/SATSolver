@@ -9,4 +9,4 @@ ISTD 2D Challenge
 
 3. Commit the code and push to a new branch, and open a pull request.
 
-The rule of thumb is that don;t push code to master branch directly.
+The rule of thumb is that don't push code to master branch directly.
