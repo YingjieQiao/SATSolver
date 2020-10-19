@@ -1,0 +1,3 @@
+include ':SATSolver'
+include ':app'
+rootProject.name = "Java2D"
