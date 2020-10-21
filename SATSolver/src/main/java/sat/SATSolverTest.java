@@ -32,18 +32,10 @@ public class SATSolverTest {
 
     public static void main(String[] args) throws IOException {
 
-        /*
-        File f = null;
-        if (args.length > 0) {
-            f = new File(args[0]);
-        }
-        */
 
 
-        FileReader file = new FileReader("C:\\Users\\Jing Xiong\\AndroidStudioProjects\\Wk08\\code2d\\src\\main\\java\\sat\\sampleCNF\\s8Sat.cnf");
+        FileReader file = new FileReader(args[0]);
         BufferedReader br = new BufferedReader(file);
-
-
 
 
         BufferedWriter wr = new BufferedWriter(new FileWriter(
