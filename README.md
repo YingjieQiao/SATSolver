@@ -14,4 +14,23 @@ The rule of thumb is that don't push code to master branch directly.
 
 # 50.001
 
-In `./SATSolver/src/sat`
+In `./SATSolver/src/sat`:
+
+1. SATSolver.java
+
+2. SATSolverTest.java
+
+
+# 50.004
+
+In `./SATSolver/src/sat`:
+
+1. deterministic.java
+
+2. Graph.java
+
+3. Node.java
+
+4. Loader.java
+
+5. InvalidInputException.java
