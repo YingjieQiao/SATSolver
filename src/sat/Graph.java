@@ -11,11 +11,17 @@ public class Graph {
     public List<List<Node>> SCCs = new ArrayList<>();
 
 
-    Graph(List<Integer> vertices, List<List<Integer>> edges) {
+    Graph(int n_v, ArrayList<ArrayList<Integer>> edges) {
         adjacencyLists = new HashMap<>();
         nodes = new HashMap<>();
 
-        for (Integer id: vertices) {
+        for (int id = 1; id <= n_v; id++) {
+            Node vertex = new Node();
+            vertex.id = id;
+            adjacencyLists.put(vertex, new HashSet<>());
+            nodes.put(id, vertex);
+        }
+        for (int id = -1; id >= -n_v; id--){
             Node vertex = new Node();
             vertex.id = id;
             adjacencyLists.put(vertex, new HashSet<>());

@@ -71,11 +71,8 @@ public class deterministic {
         HashMap<Integer, Boolean> solution = new HashMap<>();
 
         for(List<Node> SCC: g.SCCs) {
-            if(solution.containsKey(SCC.get(0).id)) {
-                // variables in this SCC are already assigned, skip
-                continue;
-            }
             for(Node n: SCC) {
+                if (solution.containsKey(Math.abs(n.id))) continue;
                 int id = n.id;
                 if(id > 0) {
                     solution.put(id, true);
@@ -88,7 +85,7 @@ public class deterministic {
     }
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         String path = args[0];
         try {
             Graph g = Loader.load(path);
