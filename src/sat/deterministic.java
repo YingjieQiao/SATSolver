@@ -71,10 +71,17 @@ public class deterministic {
         HashMap<Integer, Boolean> solution = new HashMap<>();
 
         for(List<Node> SCC: g.SCCs) {
-            if(solution.containsKey(SCC.get(0).id)) {
-                // variables in this SCC are already assigned, skip
-                continue;
+            int i;
+            for (i = 0; i < SCC.size(); i++) {
+                if(solution.containsKey(SCC.get(i).id)) {
+                    // variables in this SCC are already assigned, skip
+                    i = -1;
+                    break;
+                }
             }
+
+            if (i == -1) { continue; }
+
             for(Node n: SCC) {
                 int id = n.id;
                 if(id > 0) {
