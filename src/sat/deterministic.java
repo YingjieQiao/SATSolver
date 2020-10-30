@@ -12,10 +12,7 @@ import java.util.*;
 
 public class deterministic {
 
-    public static void tarjan(Graph g) {
-        g.index = 1;
-        Set<Node> nodes = g.adjacencyLists.keySet();
-
+    public static void tarjan(Graph g, Set<Node> nodes) {
         for(Node node: nodes) {
             if(node.index == 0) {
                 _tarjan(g, node);
@@ -93,9 +90,12 @@ public class deterministic {
         String path = args[0];
         try {
             Graph g = Loader.load(path);
+            assert g != null;
+            g.index = 1;
+            Set<Node> nodes = g.adjacencyLists.keySet();
 
             // Tarjan's algorithm
-            tarjan(g);
+            tarjan(g, nodes);
 
             // check if satisfiable
             if(satisfiable(g)) {
@@ -105,13 +105,12 @@ public class deterministic {
                 Map<Integer, Boolean> solution = solve(g);
                 for (int i = 1; i <= solution.size(); i++) {
                     Boolean value = solution.get(i);
-                    if(value) {
+                    if (value) {
                         System.out.print('1');
-                        System.out.print(' ');
                     } else {
                         System.out.print('0');
-                        System.out.print(' ');
                     }
+                    System.out.print(' ');
                 }
                 System.out.println("");
             } else {

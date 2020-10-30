@@ -37,6 +37,11 @@ public class Loader {
     }
 
 
+    public static randomized load_rand(String path) {
+        return new randomized();
+    }
+
+
     private static String skipToProblemLine(BufferedReader br) throws InvalidInputException, IOException {
         // skip all the comment lines
         String line = "c";
