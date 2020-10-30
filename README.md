@@ -27,10 +27,12 @@ In `./SATSolver/src/sat`:
 
 1. deterministic.java
 
-2. Graph.java
+2. randomized.java
 
-3. Node.java
+3. Graph.java
 
-4. Loader.java
+4. Node.java
+
+5. Loader.java
 
 5. InvalidInputException.java
