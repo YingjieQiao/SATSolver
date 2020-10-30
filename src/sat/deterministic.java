@@ -14,7 +14,9 @@ public class deterministic {
 
     public static void tarjan(Graph g, Set<Node> nodes) {
         for(Node node: nodes) {
-            if(node.index == 0) {
+            if(node.index != 0) {
+                return;
+            } else {
                 _tarjan(g, node);
             }
         }
