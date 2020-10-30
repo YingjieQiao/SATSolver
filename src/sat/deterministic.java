@@ -67,6 +67,7 @@ public class deterministic {
         return true;
     }
 
+
     public static Map<Integer, Boolean> solve(Graph g) {
         HashMap<Integer, Boolean> solution = new HashMap<>();
 
@@ -85,7 +86,9 @@ public class deterministic {
     }
 
 
+
     public static void main(String[] args) throws Exception {
+
         String path = args[0];
         try {
             Graph g = Loader.load(path);
