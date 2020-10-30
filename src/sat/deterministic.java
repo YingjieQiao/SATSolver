@@ -67,22 +67,13 @@ public class deterministic {
         return true;
     }
 
+
     public static Map<Integer, Boolean> solve(Graph g) {
         HashMap<Integer, Boolean> solution = new HashMap<>();
 
         for(List<Node> SCC: g.SCCs) {
-            int i;
-            for (i = 0; i < SCC.size(); i++) {
-                if(solution.containsKey(SCC.get(i).id)) {
-                    // variables in this SCC are already assigned, skip
-                    i = -1;
-                    break;
-                }
-            }
-
-            if (i == -1) { continue; }
-
             for(Node n: SCC) {
+                if (solution.containsKey(Math.abs(n.id))) continue;
                 int id = n.id;
                 if(id > 0) {
                     solution.put(id, true);
@@ -93,6 +84,7 @@ public class deterministic {
         }
         return solution;
     }
+
 
 
     public static void main(String[] args) {
